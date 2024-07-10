@@ -9,6 +9,7 @@ import java.util.List;
  * for different scenarios including multiple fees and/or a sales tax.
  */
 public class PriceManager {
+    private PriceCalculator priceCalculator = new PriceCalculator();
 
     /**
      * Main method. When completed it should print to standard output the new prices of the items.
@@ -53,7 +54,8 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
-        return prices;
+
+        return priceCalculator.calculateTotalPrices(prices, price -> price.multiply(salesTax));
     }
 
     /**
@@ -68,7 +70,7 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
-        return prices;
+        return priceCalculator.calculateTotalPrices(prices, price -> price.add(setupFee).multiply(salesTax));
     }
 
     /**
@@ -84,6 +86,6 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
-        return prices;
+        return priceCalculator.calculateTotalPrices(prices, price -> price.add(setupFee).add(salesFee).add(countyFee));
     }
 }
