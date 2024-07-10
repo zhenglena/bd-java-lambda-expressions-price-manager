@@ -54,6 +54,10 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
+<<<<<<< HEAD
+=======
+        PriceCalculator priceCalculator = new PriceCalculator();
+>>>>>>> 6008b94432049c6441b2cc0faeffd2d2d5db8e30
 
         return priceCalculator.calculateTotalPrices(prices, price -> price.multiply(salesTax));
     }
@@ -70,7 +74,13 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
+<<<<<<< HEAD
         return priceCalculator.calculateTotalPrices(prices, price -> price.add(setupFee).multiply(salesTax));
+=======
+        PriceCalculator priceCalculator = new PriceCalculator();
+
+        return priceCalculator.calculateTotalPrices(prices, price -> (price.add(setupFee)).multiply(salesTax));
+>>>>>>> 6008b94432049c6441b2cc0faeffd2d2d5db8e30
     }
 
     /**
@@ -86,6 +96,15 @@ public class PriceManager {
         // TODO Call PriceCalculator's method calculateTotalPrices by giving an argument that is a lambda expression
         //  implementing the Function interface. Alter the return statement to return the total prices calculated. Refer
         //  to the README for assistance in calculating the prices correctly.
+<<<<<<< HEAD
         return priceCalculator.calculateTotalPrices(prices, price -> price.add(setupFee).add(salesFee).add(countyFee));
+=======
+        PriceCalculator priceCalculator = new PriceCalculator();
+
+        return priceCalculator.calculateTotalPrices(prices,
+                price -> price.add(setupFee)
+                        .add(salesFee)
+                        .add(countyFee));
+>>>>>>> 6008b94432049c6441b2cc0faeffd2d2d5db8e30
     }
 }
